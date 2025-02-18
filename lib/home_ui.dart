@@ -20,12 +20,12 @@ class HomeUi extends StatelessWidget {
         ),
         centerTitle: true,
         leading: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding: const EdgeInsets.only(left: 4.0),
           child: IconButton(
             icon: SvgPicture.asset(
               'assets/images/back_button.svg',
-              height: 40,
-              width: 40,
+              // height: 100,
+              // width: 100,
             ),
             onPressed: () {
               // Do something

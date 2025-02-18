@@ -1,8 +1,15 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:first_ui/home_ui.dart';
 import 'package:first_ui/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const MyApp(), // Wrap your app
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -12,11 +19,11 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // routes: {
-      // '/': (context) => const SplashScreen(),
-      // '/home': (context) => const HomeUi(),
-      // },
-      home: const SplashScreen(),
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/home': (context) => const HomeUi(),
+      },
+      // home: const SplashScreen(),
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         scaffoldBackgroundColor: Colors.white,

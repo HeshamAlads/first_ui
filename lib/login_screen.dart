@@ -37,26 +37,29 @@ class _LoginScreenState extends State<LoginScreen> {
         FocusScope.of(context).requestFocus(FocusNode());
       },
       child: Scaffold(
-        appBar: AppBar(
-          // title: const Text('Login'),
-          centerTitle: true,
-          leading: Padding(
-            padding: const EdgeInsets.all(3.0),
-            child: IconButton(
-              icon: SvgPicture.asset(
-                'assets/images/back_button.svg',
-                height: 40,
-                width: 40,
-              ),
-              onPressed: () {
-                // Do something
-              },
-            ),
-          ),
-        ),
+        // appBar: AppBar(
+        //   // title: const Text('Login'),
+        //   centerTitle: true,
+        //   leading: Padding(
+        //     padding: const EdgeInsets.all(3.0),
+        //     child: IconButton(
+        //       icon: SvgPicture.asset(
+        //         'assets/images/back_button.svg',
+        //         height: 40,
+        //         width: 40,
+        //       ),
+        //       onPressed: () {
+        //         // Do something
+        //       },
+        //     ),
+        //   ),
+        // ),
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(16.0),
+            padding: EdgeInsets.only(
+                top: MediaQuery.of(context).size.height / 8,
+                left: 16.0,
+                right: 16.0), // (16.0),
             child: Form(
               key: _formKey,
               child: Column(
@@ -87,7 +90,6 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                       return null;
                     },
-                    // focusNode: _focusNode,
                   ),
                   const SizedBox(height: 35.0),
                   TextFormField(
@@ -112,23 +114,12 @@ class _LoginScreenState extends State<LoginScreen> {
                       }
                       return null;
                     },
-                    // focusNode: _focusNode,
                   ),
                   const SizedBox(height: 35.0),
 
-                  // MaterialButton(
-                  //   color: const Color(0xff3366CC),
-                  //   onPressed: _login,
-                  //   shape: RoundedRectangleBorder(
-                  //     side: const BorderSide(color: Colors.blue),
-                  //     borderRadius: BorderRadius.circular(100.0),
-                  //   ),
-                  //   child: const Text('Login',
-                  //       style: TextStyle(color: Colors.white)),
-                  // ),
 
                   Container(
-                    height: 44.0,
+                    height: MediaQuery.of(context).size.height / 16.5,
                     width: double.infinity,
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
@@ -137,7 +128,9 @@ class _LoginScreenState extends State<LoginScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(100.0)),
                     ),
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/home');
+                      },
                       style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.transparent,
                           shadowColor: Colors.transparent),
