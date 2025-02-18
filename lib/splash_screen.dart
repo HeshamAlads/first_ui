@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:first_ui/home_ui.dart';
+import 'package:first_ui/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -21,7 +21,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void _navigateToHome() {
     Timer(const Duration(milliseconds: 1500), () {
       Navigator.of(context).pushReplacement(
-        MaterialPageRoute(builder: (context) => const HomeUi()),
+        MaterialPageRoute(builder: (context) => const LoginScreen()),
       );
     });
   }

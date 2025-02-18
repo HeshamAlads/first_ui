@@ -26,7 +26,7 @@ class VerticalItem extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Image.asset(
-                    'assets/images/qnb.png',
+                    'assets/images/cip.png',
                   ),
                   const SizedBox(width: 5),
                   const Text(
